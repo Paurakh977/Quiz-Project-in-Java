@@ -7,23 +7,20 @@ import java.util.Scanner;
 
 public class Login {
 
-        public static void login_user() throws SQLException {
-            Connection connection = DriverManager.getConnection("jdbc:sqlite:data.db");
-            Scanner sc=new Scanner(System.in);
-            String name,password;
+    public static void login_user() throws SQLException {
+        Connection connection = DriverManager.getConnection("jdbc:sqlite:data.db");
+        try (Scanner sc = new Scanner(System.in)) {
+            String name, password;
             System.out.println("name");
-            name=sc.nextLine();
+            name = sc.nextLine();
             System.out.println("pass");
-            password= sc.nextLine();
+            password = sc.nextLine();
 
-            if (Authentication.authenticateUser(connection,name,password)){
+            if (Authentication.authenticateUser(connection, name, password)) {
                 System.out.println("Id pass matched . logged in");
-            }
-            else {
+            } else {
                 System.out.println("Failed");
             }
         }
-        }
-
-
-
+    }
+}

@@ -40,9 +40,6 @@ public class Credentials {
 
     String Password;
 
-
     Connection connection = DriverManager.getConnection("jdbc:sqlite:data.db");
-
-
 
 }
