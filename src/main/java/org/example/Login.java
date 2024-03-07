@@ -1,5 +1,8 @@
 package org.example;
 
+import models.Credentials;
+import models.Questions;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -18,6 +21,8 @@ public class Login {
 
             if (Authentication.authenticateUser(connection, name, password)) {
                 System.out.println("Id pass matched . logged in");
+                Playroom p1 = new Playroom();
+                p1.main(name);
             } else {
                 System.out.println("Failed");
             }

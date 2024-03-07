@@ -1,7 +1,11 @@
 package org.example;
 
+import models.Questions;
+
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -12,12 +16,14 @@ public class Main {
             String descision = sc.nextLine();
             if (descision.equalsIgnoreCase("l")) {
                 Login.login_user();
+
             } else if (descision.equalsIgnoreCase("s")) {
                 Signup.regesiter_user();
             } else {
                 System.out.println("Invalid input given " + descision);
             }
         }
+
     }
 
 }
